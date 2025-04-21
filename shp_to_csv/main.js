@@ -34,7 +34,7 @@ const outputDir = path.join(__dirname, "csv");
 
     const rows = [];
     try {
-      const source = await shapefile.open(shpPath);
+      const source = await shapefile.open(shpPath, undefined, { encoding: "EUC-KR" });
       let result = await source.read();
 
       while (!result.done) {
